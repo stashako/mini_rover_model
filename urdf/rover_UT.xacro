@@ -1,0 +1,129 @@
+<?xml version="1.0"?>
+<!-- Revolute-Revolute Manipulator -->
+<robot name="rover_UT" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <!-- Base Link -->
+  <link name="base_link">
+    <visual>
+      <origin xyz="0 0 4" rpy="1.57 0 0"/>
+      <geometry>
+	      <mesh filename="package://rover_model/meshes/arvis_body.STL.dae"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <link name="wheel1">
+    <visual>
+      <origin xyz="-18 0 -18" rpy="1.57 0 0"/>
+      <geometry>
+	      <mesh filename="package://rover_model/meshes/wheel.STL.dae"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <joint name="joint_base_mid1" type="revolute">
+    <parent link="base_link"/>
+    <child link="wheel1"/>
+    <origin xyz="30.1 -1 18.1" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+    <dynamics damping="1"/>
+    <limit effort="100.0" velocity="0.5" lower="-3.14" upper="3.14" />
+  </joint>
+
+  <link name="wheel2">
+    <visual>
+      <origin xyz="-18 0 -18" rpy="1.57 0 0"/>
+      <geometry>
+	      <mesh filename="package://rover_model/meshes/wheel.STL.dae"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <joint name="joint_base_mid2" type="revolute">
+    <parent link="base_link"/>
+    <child link="wheel2"/>
+    <origin xyz="59.1 -1 18.1" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+    <dynamics damping="1"/>
+    <limit effort="100.0" velocity="0.5" lower="-3.14" upper="3.14" />
+  </joint>
+
+<link name="wheel3">
+    <visual>
+      <origin xyz="-18 0 -18" rpy="1.57 0 0"/>
+      <geometry>
+	      <mesh filename="package://rover_model/meshes/wheel.STL.dae"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <joint name="joint_base_mid3" type="revolute">
+    <parent link="base_link"/>
+    <child link="wheel3"/>
+    <origin xyz="45.1 -32 18.1" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+    <dynamics damping="1"/>
+    <limit effort="100.0" velocity="0.5" lower="-3.14" upper="3.14" />
+  </joint>
+
+  <link name="wheel4">
+    <visual>
+      <origin xyz="-18 0 -18" rpy="1.57 0 0"/>
+      <geometry>
+	      <mesh filename="package://rover_model/meshes/wheel.STL.dae"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <joint name="joint_base_mid4" type="revolute">
+    <parent link="base_link"/>
+    <child link="wheel4"/>
+    <origin xyz="72.1 -32 18.1" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+    <dynamics damping="1"/>
+    <limit effort="100.0" velocity="0.5" lower="-3.14" upper="3.14" />
+  </joint>
+
+
+  <link name="arm">
+    <visual>
+      <origin xyz="-34.6 13 -22" rpy="1.57 0 0"/>
+      <geometry>
+	      <mesh filename="package://rover_model/meshes/Arvis_arm.STL.dae"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <joint name="joint_base_mid5" type="revolute">
+    <parent link="base_link"/>
+    <child link="arm"/>
+    <origin xyz="87 -18.5 25" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+    <dynamics damping="1"/>
+    <limit effort="100.0" velocity="0.5" lower="-3.14" upper="3.14" />
+  </joint>
+  
+  <!-- Middle Link 
+  <link name="test">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+	      <box size="10 10 100"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <joint name="joint_base_mid6" type="revolute">
+    <parent link="arm"/>
+    <child link="test"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+    <dynamics damping="1"/>
+    <limit effort="100.0" velocity="0.5" lower="-3.14" upper="3.14" />
+  </joint>
+
+-->
+
+
+</robot>
+

@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!-- Revolute-Revolute Manipulator -->
+<robot name="rover_UT" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <!-- Base Link -->
+
+  <link name="base_link">
+    <visual>
+      <origin xyz="36.8 -5 -14.8" rpy="1.57 0 -1.57"/>
+      <geometry>
+	      <mesh filename="package://rover_model/meshes/arm.dae"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <!-- Middle Link -->
+  <link name="test">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+	      <box size="10 10 100"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <joint name="joint_base_mid" type="revolute">
+    <parent link="base_link"/>
+    <child link="test"/>
+    <origin xyz="30 0 0" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+    <dynamics damping="1"/>
+    <limit effort="100.0" velocity="0.5" lower="-3.14" upper="3.14" />
+  </joint>
+
+
+
+
+</robot>
+
